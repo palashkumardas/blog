@@ -53,7 +53,7 @@
       foreach ($row as $val) {
         $table.="<td>$val</td>";
       }
-        $table.="<td><a href=\"edit.php?id=$row[id]\" class=\"btn btn-info\">edit</a>|| <a href=\"delete.php?id=$row[id]\" class=\"btn btn-danger\">Delete</a> </td>";
+        $table.="<td><a href=\"edit.php?id=$row[id]\" class=\"btn btn-info btn-fill pull-center\">edit</a>|| <a href=\"delete.php?id=$row[id]\" class=\"btn btn-danger btn-fill pull-center\">Delete</a> </td>";
         $table.="</tr>";
     }
       

@@ -50,9 +50,9 @@ include ('navbar.php');
                                     <textarea name="content" class="form-control"  name="content" cols="30" rows="10" placeholder="Please give content" required></textarea>
                                 </div>
                                 <div class="form-group">
-                                <select class="form-select" name="status" required>
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">Active</option>
+                                <select class="form-select" name="status">
+                                    <option selected >Open this select menu</option>
+                                    <option value="1" >Active</option>
                                     <option value="2">Inactive</option>
                                 </select>
                                 </div>
@@ -78,15 +78,14 @@ include ('navbar.php');
                                 <?php
 		                            echo $obj->getTable("menus","*","1","table table-striped table-hover");
 	                            ?>  
+                                </div>
                                 <!-- end  table -->
                                 <div class="footer">
                                     <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Tesla Model S
-                                        <i class="fa fa-circle text-danger"></i> BMW 5 Series
-                                    </div>
-                                    <hr>
-                                    <div class="stats">
-                                        <i class="fa fa-check"></i> Data information certified
+                                        <i class="fa fa-circle text-info"></i> Update 
+                                        <i class="fa fa-circle text-danger"></i> Delete
+                                        <i class="fa fa-history"></i> last Update Time: <?php ?>
+
                                     </div>
                                 </div>
                             </div>
