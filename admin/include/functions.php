@@ -56,10 +56,7 @@
         $table.="<td><a href=\"edit.php?id=$row[id]\" class=\"btn btn-info\">edit</a>|| <a href=\"delete.php?id=$row[id]\" class=\"btn btn-danger\">Delete</a> </td>";
         $table.="</tr>";
     }
-        $table.="<tr>";
-                $table.="<td colspan=\"$count\" style=\"text-align:center\"><a href=\"insert.php\" class=\" btn btn-primary\"> Add New</a></td>";
-       
-        $table.="</tr>";
+      
     $table.="</table>";
     return $table;
     }
