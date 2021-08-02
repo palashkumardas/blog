@@ -1,5 +1,9 @@
-<?php include ('header.php'); ?>
-<?php include ('navbar.php'); ?>
+<?php 
+include ('include/functions.php');  
+
+include ('header.php');  
+include ('navbar.php'); 
+?>
 <!-- start body -->
 <div class="content">
             <div class="container-fluid">
@@ -28,27 +32,31 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-8 ">
-                        <div class="card">
+               
+                    <div class="col-md-8" >
+                        <div class="card" style="background-color:#f0f2ff;">
                             <div class="header">
                                 <h4 class="title" >Welcome To Menu Page.</h4>
                             </div>
                             <div class="content">
                             <!-- form start -->
-                            <form>
+                            <form action="h-insert.php" method="POST">
                                 <div class="form-group">
-                                    <label for="menu" style="color:DeepSkyBlue;">Menu:</label>
-                                    <input type="text" class="form-control" id="menu" placeholder="Please give menu" required>
+                                    <label for="menu" >Menu:</label>
+                                    <input type="text" class="form-control" name="menu" placeholder="Please give menu" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="content" style="color:DeepSkyBlue;">Content:</label>
-                                    <textarea name="content" class="form-control" id="content" cols="30" rows="10" placeholder="Please give content" required></textarea>
-                                        <br>
-                                    <button type="submit" class="btn btn-info btn-fill pull-center">Submit Info</button>
-
+                                    <label for="content">Content:</label>
+                                    <textarea name="content" class="form-control"  name="content" cols="30" rows="10" placeholder="Please give content" required></textarea>
                                 </div>
-                                
+                                <div class="form-group">
+                                <select class="form-select" name="status" required>
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Active</option>
+                                    <option value="2">Inactive</option>
+                                </select>
+                                </div>
+                                <button type="submit" class="btn btn-info btn-fill pull-center" name="submit">Submit Info</button>       
                             </form>
                             <!-- form end -->
                             
