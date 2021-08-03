@@ -10,7 +10,17 @@
                     <div class="col-md-10">
                         <div class="card">
                             <div class="header">
-                                 
+                                 <?php
+                                 if(isset($_REQUEST['id'])){
+                                     extract($_REQUEST);
+                                     $id = $_REQUEST['id'];
+                                     $obj->delete("menus","id=$id");
+                                        echo "<div class='alert alert-danger' role='alert'>Information has been deleted!</div>";
+                                 }else{
+                                    echo "<div class='alert alert-danger' role='alert'>Something has been wroong!</div>";
+                                 }
+                                
+                                 ?>
                             </div>                        
                         </div>
                     </div>  
