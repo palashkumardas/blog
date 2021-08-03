@@ -52,8 +52,8 @@ include ('navbar.php');
                                 <div class="form-group">
                                 <select class="form-select" name="status">
                                     <option selected >Open this select menu</option>
-                                    <option value="1" >Active</option>
-                                    <option value="2">Inactive</option>
+                                    <option >Active</option>
+                                    <option>Inactive</option>
                                 </select>
                                 </div>
                                 <button type="submit" class="btn btn-info btn-fill pull-center" name="submit">Submit Info</button>       
