@@ -46,7 +46,7 @@
       $table.="<th>".ucfirst($column)."</th>";
 
     }
-    $table.="<th> Action</th>";
+    $table.="<th style='width:200px;'> Action</th>";
     $table.="</tr>";
     foreach ($data as $row) {
       $table.="<tr>";
@@ -60,6 +60,31 @@
     $table.="</table>";
     return $table;
     }
+    // categories table
+        public function getCategories($table,$cols,$border=1,$css_classes=""){
+          $count=1; // count collumn
+          $data=$this->getAll($table,$cols);
+          $table="<table border='$border' class='$css_classes'>";
+          $table.="<tr>";
+          foreach ($data[0] as $column => $val) {
+            $count++;
+            $table.="<th>".ucfirst($column)."</th>";
+      
+          }
+          $table.="<th style='width:200px;'> Action</th>";
+          $table.="</tr>";
+          foreach ($data as $row) {
+            $table.="<tr>";
+            foreach ($row as $val) {
+              $table.="<td>$val</td>";
+            }
+              $table.="<td><a href=\"c-edit.php?id=$row[cat_id]\" class=\"btn btn-info btn-fill pull-center\">edit</a>|| <a href=\"c-delete.php?id=$row[cat_id]\" class=\"btn btn-danger btn-fill pull-center\">Delete</a> </td>";
+              $table.="</tr>";
+          }
+            
+          $table.="</table>";
+          return $table;
+          }
     // data update
     public function update($table,$cols,$condition){
     $sql="UPDATE $table SET $cols WHERE $condition";

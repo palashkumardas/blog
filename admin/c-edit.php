@@ -1,9 +1,12 @@
 <?php 
-include ('header.php'); 
-include ('navbar.php'); 
-include ('include/functions.php');
-?>
+  include ('header.php');               
+  include ('navbar.php');               
+  include ('include/functions.php');
 
+$id = $_REQUEST['id'];
+extract($obj->getByCondition("categories","*","cat_id=$id"));
+
+?>
 <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -35,30 +38,41 @@ include ('include/functions.php');
                     <div class="col-md-8" >
                         <div class="card" style="background-color:#f0f2ff;">
                             <div class="header">
-                                <h4 class="title" >Welcome To Categories Page.</h4>
+                                <h4 class="title" >Welcome To Menu Page.</h4>
                             </div>
                             <div class="content">
                             <?php 
-                            if(isset($_REQUEST['submit'])){
+                            
+                            if(isset($_REQUEST['update'])){
                                 extract($_REQUEST);
-                                $obj->insert("categories","cat_name='$category', status='$status'");
-                                echo "<div class ='alert alert-success' role ='alert'>Information has been inserted!</div>";
+                                $id=$_REQUEST['id'];
+                                if($obj->update("categories","cat_name='$category',status='$status'","cat_id=$id")){
+                                    echo "<div class='alert alert-success' role='alert'>
+                                    Information has been updated!
+                                  </div>";
+                                }else{
+                                    echo "<div class='alert alert-danger' role='alert'>
+                                   Something has been wrong!
+                                  </div>";
+                                }
                             }
                             ?>
                             <!-- form start -->
                             <form action="" method="POST">
                                 <div class="form-group">
                                     <label for="category" >Category:</label>
-                                    <input type="text" class="form-control" name="category" placeholder="Please give menu" required>
+                                    <input type="text" class="form-control" name="category" value="<?=$cat_name	;?>" >
                                 </div>
+                         
                                 <div class="form-group">
                                 <select class="form-select" name="status">
-                                    <option selected >Open this select menu</option>
+                                    <option ><?=$status;?></option>
                                     <option >Active</option>
-                                    <option>Inactive</option>
+                                    <option >Inactive</option>
+                                    
                                 </select>
                                 </div>
-                                <button type="submit" class="btn btn-info btn-fill pull-center" name="submit">Submit Info</button>       
+                                <button type="submit" class="btn btn-info btn-fill pull-center" name="update">Update Info</button>       
                             </form>
                             <!-- form end -->
                             
@@ -69,35 +83,8 @@ include ('include/functions.php');
 
 
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card ">
-                            <div class="header">
-                                <h4 class="title">Show information Table</h4>
-                            </div>
-                            <div class="content">
-                                <!-- start table -->
-                               <?php
-                                echo $obj->getCategories("categories","*","1","table table-striped table-hover");
-                               ?>
-                                </div>
-                                <!-- end  table -->
-                                <div class="footer">
-                                    <div class="legend">
-                                        <i class="fa fa-circle text-info"></i> Update 
-                                        <i class="fa fa-circle text-danger"></i> Delete
-                                        <i class="fa fa-history"></i> last Update Time: <?php ?>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
 
-
-
-
-
-
-
+<!--end body -->
 <?php include ('footer.php');?>
