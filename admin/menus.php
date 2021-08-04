@@ -34,7 +34,7 @@ include ('navbar.php');
                     </div>
                
                     <div class="col-md-8" >
-                        <div class="card" style="background-color:#f0f2ff;">
+                        <div class="card" style="background-color:#CCFFCC;">
                             <div class="header">
                                 <h4 class="title" >Welcome To Menu Page.</h4>
                             </div>
@@ -47,11 +47,11 @@ include ('navbar.php');
                                 </div>
                                 <div class="form-group">
                                     <label for="content">Content:</label>
-                                    <textarea name="content" class="form-control"  name="content" cols="30" rows="10" placeholder="Please give content" required></textarea>
+                                    <textarea  class="form-control"  name="content" cols="30" rows="10" placeholder="Please give content" required></textarea>
                                 </div>
                                 <div class="form-group">
                                 <select class="form-select" name="status">
-                                    <option selected >Open this select menu</option>
+                                    <option selected >Select Status</option>
                                     <option >Active</option>
                                     <option>Inactive</option>
                                 </select>

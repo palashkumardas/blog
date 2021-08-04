@@ -33,7 +33,7 @@ include ('include/functions.php');
                     </div>
                
                     <div class="col-md-8" >
-                        <div class="card" style="background-color:#f0f2ff;">
+                        <div class="card" style="background-color:#CCFFCC;">
                             <div class="header">
                                 <h4 class="title" >Welcome To Categories Page.</h4>
                             </div>
@@ -53,7 +53,7 @@ include ('include/functions.php');
                                 </div>
                                 <div class="form-group">
                                 <select class="form-select" name="status">
-                                    <option selected >Open this select menu</option>
+                                    <option selected >Select Status</option>
                                     <option >Active</option>
                                     <option>Inactive</option>
                                 </select>
